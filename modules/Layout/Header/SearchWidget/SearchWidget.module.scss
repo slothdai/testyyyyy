@@ -1,0 +1,24 @@
+.modal {
+    padding: 0 !important;
+
+    @include mobile-only {
+        margin: 0 !important;
+        height: 100% !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+}
+
+.wrapper {
+    @include mobile-only {
+        padding: 0 !important;
+        min-height: 0 !important;
+        height: 100% !important;
+    }
+}
+
+.backdrop {
+    @include mobile-only {
+        display: none;
+    }
+}

@@ -1,0 +1,27 @@
+.moreCategories {
+    @include text-label;
+
+    color: var(--prezly-accent-color);
+    font-weight: $font-weight-bold;
+}
+
+.categoryLink {
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+}
+
+// TODO: This just replicates styles from the CategoryLink component
+.moreCategoriesLink {
+    @include link-primary;
+
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.categoriesList {
+    display: flex;
+    flex-wrap: wrap;
+}

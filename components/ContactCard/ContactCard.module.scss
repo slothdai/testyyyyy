@@ -1,0 +1,102 @@
+.avatar {
+    width: 3.75rem;
+    height: 3.75rem;
+    margin-right: $spacing-3;
+    border-radius: 50%;
+}
+
+.contentTitle {
+    @include tablet-up {
+        display: flex;
+    }
+}
+
+.name {
+    @include paragraph;
+
+    margin: 0 auto $spacing-half;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-l;
+
+    @include tablet-up {
+        margin-top: 0.25rem;
+    }
+}
+
+.position {
+    @include text-small;
+
+    margin: 0 auto $spacing-3;
+    color: $color-base-500;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-labels;
+}
+
+.links {
+    margin: $spacing-2 auto (-$spacing-2);
+}
+
+.primaryContacts {
+    margin: 0 auto $spacing-3;
+
+    @include tablet-up {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+    }
+}
+
+.link {
+    @include text-small;
+    @include link-primary;
+
+    display: flex;
+    align-items: center;
+    margin-right: $spacing-4;
+    margin-bottom: $spacing-2;
+    overflow: hidden;
+}
+
+.linkText {
+    overflow: hidden;
+    overflow-wrap: break-word;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-labels;
+}
+
+.socials {
+    display: flex;
+
+    .link:last-child {
+        margin-right: 0;
+    }
+}
+
+.icon {
+    width: 1.125rem;
+    height: 0.9rem;
+    flex-shrink: 0;
+    margin-right: $spacing-1;
+}
+
+.container {
+    display: block;
+    overflow: hidden;
+
+    /* stylelint-disable max-nesting-depth */
+    // This class applies mobile styling but can also be forced through props.
+    // The component will apply this class automatically when on mobile screen.
+    &.compact {
+        // margin-bottom: -70px;
+        .avatar {
+            margin-bottom: $spacing-3;
+        }
+
+        .links {
+            display: block;
+            margin-bottom: 0;
+        }
+    }
+
+    /* stylelint-enable max-nesting-depth */
+}

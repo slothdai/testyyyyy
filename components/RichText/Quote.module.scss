@@ -1,0 +1,61 @@
+$content-padding: $spacing-3 + $spacing-4;
+
+@mixin quote-fix($direction) {
+    padding-#{$direction}: $content-padding;
+
+    &::before {
+        #{$direction}: $spacing-4;
+    }
+}
+
+.container {
+    @include border-radius-m;
+
+    display: flex;
+    margin: $spacing-6 auto;
+}
+
+.content {
+    @include paragraph;
+
+    background: $color-base-50;
+    padding: $spacing-4;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        background-color: $color-base-400;
+        width: 2px;
+        height: calc(100% - ($spacing-4 * 2));
+        transform: translateY(-50%);
+    }
+}
+
+.alignLeft {
+    text-align: left;
+    justify-content: flex-start;
+
+    .content {
+        @include quote-fix("left");
+    }
+}
+
+.alignCenter {
+    text-align: center;
+    justify-content: center;
+
+    .content {
+        @include quote-fix("left");
+    }
+}
+
+.alignRight {
+    text-align: right;
+    justify-content: flex-end;
+
+    .content {
+        @include quote-fix("right");
+    }
+}

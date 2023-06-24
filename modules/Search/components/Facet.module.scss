@@ -1,0 +1,128 @@
+.container {
+    @include not-desktop {
+        width: 100%;
+    }
+
+    @include tablet-up {
+        &:not(:last-child) {
+            margin-right: $spacing-3;
+        }
+    }
+
+    @include mobile-only {
+        &:not(:last-child) {
+            margin-bottom: $spacing-1;
+        }
+    }
+
+    .button {
+        @include border-radius-m;
+
+        background: $color-base-white;
+        border: 1px solid $color-borders;
+        color: $color-base-600;
+        width: 100%;
+
+        &:hover {
+            opacity: 1;
+            color: $color-base-700;
+        }
+
+        &:active {
+            color: $color-base-700;
+        }
+    }
+
+    .buttonContent {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+.menu {
+    z-index: 1;
+    width: max-content;
+    min-width: 100%;
+    max-width: 100%;
+
+    @include mobile-only {
+        max-width: none !important;
+        width: 100%;
+    }
+}
+
+.title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.caret {
+    margin-left: $spacing-2;
+    flex-shrink: 0;
+    width: $spacing-3;
+    height: $spacing-3;
+}
+
+.caretOpen {
+    transform: rotate(180deg);
+}
+
+.panel {
+    @include shadow-l;
+    @include border-radius-m;
+
+    position: absolute;
+    z-index: 10;
+    margin-top: $spacing-3;
+    background-color: $color-base-white;
+    padding: $spacing-3;
+}
+
+.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.listItemInner {
+    @include text-label;
+
+    display: flex;
+    align-items: center;
+    padding: $spacing-2;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.label {
+    margin-left: $spacing-1;
+}
+
+.count {
+    white-space: nowrap;
+    margin-left: $spacing-half;
+    opacity: 0.75;
+}
+
+.viewMore {
+    @include text-label;
+
+    border: 0;
+    padding: $spacing-1 0;
+    margin-top: $spacing-1;
+    margin-bottom: -1 * $spacing-1;
+    color: var(--prezly-accent-color);
+    font-weight: $font-weight-bold;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}
